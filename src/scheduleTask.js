@@ -1,7 +1,13 @@
 const puppeteer = require('puppeteer');
+require('dotenv').config();
 async function GetSendData() {
-    const URL = "https://ws-tcg.com/todays-card/";
-    const browser = await puppeteer.launch();
+    const URL = process.env.WS;
+    const browser = await puppeteer.launch({
+        args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox'
+          ]
+    });
     const page = await browser.newPage();
     await page.goto(URL);
     const titleList = await page.$$eval("h3 > a", list => list.map(el => el.innerHTML));
