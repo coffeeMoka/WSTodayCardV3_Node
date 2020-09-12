@@ -19,7 +19,7 @@
   "homepage": "https://github.com/coffeeMoka/WSTodayCardV3_Node#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "node-schedule": "^1.3.2",
     "puppeteer": "^3.0.4"
   },
